@@ -45,6 +45,8 @@ target/
 
 ### NetBeans ###
 /nbproject/private/
+
+*.mvn
 /nbbuild/
 /dist/
 /nbdist/
