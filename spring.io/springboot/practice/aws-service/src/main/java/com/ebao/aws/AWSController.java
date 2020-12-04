@@ -17,7 +17,7 @@ public class AWSController {
 
   private final IAMService iamService;
 
-  private final MailService mailService;
+  private final QQMailService mailService;
 
   @GetMapping("/iam")
   public ResponseEntity<AccessKey> iam(
@@ -34,7 +34,7 @@ public class AWSController {
 
   @GetMapping("/mail")
   public String mail(){
-    this.mailService.setMailSender();
+    this.mailService.setMailSender("dav@ebaotehc.com","ssss等待","ddd等待");
     return "mail";
   }
 
