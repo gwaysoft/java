@@ -1,10 +1,8 @@
 package com.ebao.aws;
 
 import lombok.RequiredArgsConstructor;
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -12,8 +10,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-//@ConfigurationProperties(prefix = "qq")
-public class QQMailService {
+public class OutlookMailService {
 
     private final JavaMailSender mailSender;
     @Value("${spring.mail.username}")
@@ -26,16 +23,16 @@ public class QQMailService {
      * @param subject  主题
      * @param content  内容
      */
-    public void setMailSender(String to, String subject, String content) {
+    public void setMailSender(String subject, String content, String... to) {
+        log.info(to[0]);
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-        log.debug(from);
         simpleMailMessage.setFrom(from);
         simpleMailMessage.setTo(to);
         simpleMailMessage.setSubject(subject);
         simpleMailMessage.setText(content);
-        try{
+        try {
             mailSender.send(simpleMailMessage);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

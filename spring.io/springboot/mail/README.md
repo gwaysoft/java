@@ -1,3 +1,5 @@
+## project
+### pom.xml
 ```xml
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -5,6 +7,7 @@
         </dependency>
 ```
 
+### application.properties
 ```properties
 #qq邮箱服务
 spring.mail.host=smtp.qq.com
@@ -18,12 +21,13 @@ spring.mail.password=授权码
 ##用户名，注意这里需要@outlook.com后缀
 #spring.mail.username=gwaysoft@outlook.com
 ##密码
-#spring.mail.password=password
+#spring.mail.password=outlook account's password
 ##stmp端口
 #spring.mail.port=587
 ## 设置TLS认证
 #spring.mail.properties.mail.smtp.starttls.required=true
 ```
+### code
 ```java
 @Slf4j
 @Service
@@ -58,9 +62,9 @@ public class QQMailService {
 }
 ```
 
-
-
+## SMPT setting
+### qq
 ![image_text](./pictures/outlook.png)
-
+### outlook
 ![image_text](./pictures/qq.png)
 

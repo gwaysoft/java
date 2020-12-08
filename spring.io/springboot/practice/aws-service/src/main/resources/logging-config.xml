@@ -40,24 +40,31 @@
 
     </appender>
 
-    <!--指定基础的日志输出级别-->
+    <!--指定基础的日志输出级别
     <root level="INFO">
-        <!--appender将会添加到这个loger-->
+        appender将会添加到这个loger
         <appender-ref ref="timeFileOutput"/>
-    </root>
-
+    </root-->
     <!--logger name="com.ebao" level="DEBUG" addtivity="false">
         <appender-ref ref="console"/>
     </logger-->
 
     <!-- 测试环境+开发环境. 多个使用逗号隔开. -->
     <springProfile name="test,dev">
+        <root level="INFO">
+            <!--appender将会添加到这个loger-->
+            <appender-ref ref="console"/>
+        </root>
         <logger name="com.ebao" level="DEBUG" additivity="false">
             <appender-ref ref="console"/>
         </logger>
     </springProfile>
     <!-- 生产环境. -->
     <springProfile name="prod">
+        <root level="INFO">
+            <!--appender将会添加到这个loger-->
+            <appender-ref ref="timeFileOutput"/>
+        </root>
         <logger name="com.ebao" level="INFO" additivity="false">
             <appender-ref ref="timeFileOutput"/>
         </logger>

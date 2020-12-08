@@ -7,7 +7,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 @Slf4j
-@Service
+//@Service
 @RequiredArgsConstructor
 public class MailService {
 
