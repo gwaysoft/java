@@ -1,3 +1,19 @@
+## plugins
+#### lombok
+```text
+# setting -> plugins
+# search lombok, if not install successfully, please install many times
+# add dependency at pom.xml
+```
+```xml
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+            <scope>provided</scope>
+        </dependency>
+```
+
 ## keng
 ### project utp-8 setting
 ```shell script
